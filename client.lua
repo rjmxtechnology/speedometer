@@ -4,14 +4,15 @@ end
 
 Citizen.CreateThread(function()
   while true do
-        Citizen.Wait(1)
-        if(IsPedInAnyVehicle(GetPlayerPed(-1), false)) then
-            local kmh = round(GetEntitySpeed(GetVehiclePedIsIn(GetPlayerPed(-1), false))*3.6)
-            --local mph = round(GetEntitySpeed(GetVehiclePedIsIn(GetPlayerPed(-1), false))*2.236936) --uncomment this and comment the one above for mp/h
-            local plate = GetVehicleNumberPlateText(GetVehiclePedIsIn(GetPlayerPed(-1), false))
-            local radio = GetPlayerRadioStationName(GetVehiclePedIsIn(GetPlayerPed(-1), false))
-            local fuel = round(GetVehicleFuelLevel(GetVehiclePedIsIn(GetPlayerPed(-1), false))*1.54)
-            local gear = GetVehicleCurrentGear(GetVehiclePedIsIn(GetPlayerPed(-1), false))
+        Citizen.Wait(0)
+        local ped = PlayerPedId()
+        if(IsPedInAnyVehicle(ped, false)) then
+            local kmh = round(GetEntitySpeed(GetVehiclePedIsIn(ped, false))*3.6)
+            --local mph = round(GetEntitySpeed(GetVehiclePedIsIn(ped, false))*2.236936) --uncomment this and comment the one above for mp/h
+            local plate = GetVehicleNumberPlateText(GetVehiclePedIsIn(ped, false))
+            local radio = GetPlayerRadioStationName(GetVehiclePedIsIn(ped, false))
+            local fuel = round(GetVehicleFuelLevel(GetVehiclePedIsIn(ped, false))*1.54)
+            local gear = GetVehicleCurrentGear(GetVehiclePedIsIn(ped, false))
 
             if radio == nil then
                 radio = "OFF"
