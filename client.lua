@@ -75,7 +75,7 @@ Citizen.CreateThread(function()
                 radio = "TexFM Romania Hits"
             end
 
-            if kmh >= 140 then
+  --[[           if kmh >= 140 then 
                 kmh = "~r~"..kmh
             else
             if kmh >= 100 then
@@ -83,9 +83,9 @@ Citizen.CreateThread(function()
             else
                 kmh = "~w~"..kmh
             end
-        end
+        end ]] --uncomment this and comment the one below for km/h
 
-        --[[if mph >= 85 then
+        if mph >= 85 then
             mph = "~r~"..mph
         else
         if mph >= 60 then
@@ -93,10 +93,10 @@ Citizen.CreateThread(function()
         else
             mph = "~w~"..mph
         end
-    end]] -- uncomment this and comment the one above for mp/h
+    end
 
-            drawText(7, 0.9, 0.7, 0.0, 0.0, kmh.." ~b~KM/H", 0.8, 0.8)
-            --drawText(7, 0.9, 0.7, 0.0, 0.0, mph.." ~b~MP/H", 0.8, 0.8) -- uncomment this and comment the one above for mp/h
+            -- drawText(7, 0.9, 0.7, 0.0, 0.0, kmh.." ~b~KM/H", 0.8, 0.8)
+            drawText(7, 0.9, 0.7, 0.0, 0.0, mph.." ~b~MP/H", 0.8, 0.8) -- uncomment this and comment the one above for km/h
             drawText(4, 0.9, 0.73, 0.0, 0.0, "~b~Plate: ~w~"..plate, 0.7, 0.7)
             drawText(4, 0.9, 0.76, 0.0, 0.0, "~b~Radio: ~w~"..radio, 0.7, 0.7)
             drawText(4, 0.9, 0.79, 0.0, 0.0, "~b~Fuel: ~w~"..fuel, 0.7, 0.7)
